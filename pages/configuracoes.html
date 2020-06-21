@@ -1,0 +1,134 @@
+<div class="input-group flex-nowrap">
+    <input type="text" class="form-control col-1" placeholder="*protocolo" readonly >
+    <div class="input-group-prepend">
+        <span class="input-group-text" readonly>://</span>
+    </div>
+    <input type="text" class="form-control col-3" placeholder="*url" aria-describedby="descricao-url" readonly>
+    <div class="input-group-prepend">
+        <span class="input-group-text" readonly>:</span>
+    </div>
+    <input type="text" class="form-control col-1" placeholder="*porta" readonly>
+    <input type="text" class="form-control col-2" placeholder="varival" readonly>
+    <input type="text" class="form-control col-2" placeholder="variavel" readonly>
+    <input type="text" class="form-control col-3" placeholder="variavel" readonly>
+</div>
+<br>
+<div class="input-group flex-nowrap">
+    <input id="protocolo" type="text" class="form-control col-1" placeholder="http"  onkeyup="PreviewUrl(this.id,this.value)">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="descricao-url">://</span>
+    </div>
+    <input id="url" type="text" class="form-control col-3" placeholder="127.0.0.1" aria-describedby="descricao-url" onkeyup="PreviewUrl(this.id,this.value)">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="descricao-porta">:</span>
+    </div>
+    <input id="porta" type="text" class="form-control col-1" placeholder="8080" onkeyup="PreviewUrl(this.id,this.value)">
+    <input id="param1" type="text" class="form-control col-2" placeholder="AgritradeServer/" onkeyup="PreviewUrl(this.id,this.value)">
+    <input id="param2" type="text" class="form-control col-2" placeholder="agritrade?tela=" onkeyup="PreviewUrl(this.id,this.value)">
+    <input id="param3" type="text" class="form-control col-3" placeholder="GetDate" onkeyup="PreviewUrl(this.id,this.value)">
+</div>
+<br>
+<div class="input-group flex-nowrap">
+    <div class="input-group-prepend">
+        <span class="input-group-text" readonly>preview:</span>
+    </div>
+    <input id="preview"type="text" class="form-control col-12" placeholder="http://127.0.0.1:8080/AgritradeServer/agritrade?tela=GetDate" readonly>
+</div>
+<br>
+<div class="row">
+    <div class="col-2">
+        <p>Tipo de requisição</p>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="get" name="requisicao" value="GET" class="custom-control-input" checked>
+                <label class="custom-control-label" for="get">GET</label>
+        </div>
+            
+        <div class="custom-control custom-radio">
+            <input type="radio" id="post" name="requisicao" value="POST" class="custom-control-input">
+            <label class="custom-control-label" for="post">POST</label>
+        </div>
+        
+        <div class="custom-control custom-radio">
+            <input type="radio" id="put" name="requisicao" value="PUT" class="custom-control-input">
+            <label class="custom-control-label" for="put">PUT</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="delete" name="requisicao" value="DELETE" class="custom-control-input">
+            <label class="custom-control-label" for="delete">DELETE</label>
+        </div>
+    </div>
+    <div class="col-2">
+        <p>Salvar informações? (localStorage)</p>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="salvar-sim" name="salvar" value="true" class="custom-control-input" checked>
+                <label class="custom-control-label" for="salvar-sim">Sim</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="salvar-nao" name="salvar" value="false" class="custom-control-input" >
+                <label class="custom-control-label" for="salvar-nao">Não</label>
+        </div>
+    </div>
+    <div class="col-2">
+        <p>Principal? (primeiro da lista)</p>
+        <div class="custom-control custom-radio" >
+            <input type="radio" id="principal-sim" name="principal" class="custom-control-input" value="true" checked>
+                <label class="custom-control-label" for="principal-sim" >Sim</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="principal-nao" name="principal" value="false" class="custom-control-input" >
+                <label class="custom-control-label" for="principal-nao">Não</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <h6>Dados do save</h6>
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="nversao">Nome do save:</span>
+            </div>
+            <input id="nomeVersao" type="text" class="form-control col" placeholder="127.0.0.1" aria-describedby="nversao">
+        </div>
+        <br>
+        <div class="row">
+            
+            <div class="col-12" >
+                <button type="button" class="btn btn-outline-danger" onclick="resetConfiguracoes()">Limpar Campos</button>
+                <button type="button" class="btn btn-outline-success" onclick="salvarDados()">Salvar</button>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h4>Serviços salvos</h4>
+<table id="tabelaServicos" class="display" >
+    <thead>
+        <tr>
+            <th>Nome do serviço</th>
+            <th>URL completa</th>
+            <th>obj</th>
+            <th>Ações</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+
+</table>
+
+<script>
+    setTimeout(() => {
+        iniciaServicos();
+        carregaListaServicos();
+    }, 500);
+   
+</script>

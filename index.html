@@ -1,126 +1,100 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Teste de Serviços</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testa Serviços</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" >
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-</head>
-<body style="width: 100vw;height: 100hv;">
-    <div class="container-fluid">
-        <div class="row" id=tudo>
-            <div class="col-4" style="background-color: red;">
-                <div class="row">
-                    <div class="col-12" id="urlPreview">
-                        Preview: 
-                        <div id="preview"></div>
-                    </div>
-                </div>
-                <div id="definicoes">
-                    <div id="opcoes1" class="opcoes">
-                        <div  class="titulo" data-toggle="collapse" data-target="#protocoloUrlPorta">
-                            <h3>Protocolo, URL e porta</h3>
-                        </div>
-                        <div id="protocoloUrlPorta" class="collapse conteudo" aria-labelledby="headingOne" data-parent="#definicoes">
-                            <div class="row">
-                                <div class="col-3"> <!--Tipo de procotolo-->
-                                    <div class="form-group ">
-                                        <label for="protocolos">Protocolo</label>
-                                        <select id="protocolos" class="form-control">
-                                            <option selected>http</option>
-                                            <option>https</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-9" >
-                                
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <label for="url">URL</label>
-                                            <input type="text" class="form-control" id="url" placeholder="127.0.0.1" name="url">
-                                        </div>
-                                        
-                                        <div class="col-4">
-                                            <label for="porta">Porta</label>
-                                            <input type="text" class="form-control" id="porta" name="porta" placeholder="8080">
-                                        </div>
-                                    </div>
-                                    
-                                </div>                   
-                            </div>
-                        </div>
-                    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="css/Poppins.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/emoji.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/tipped/dist/css/tipped.css"/>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          
+	          <li onclick="Abrir('inicial.html')">
+              <p>Inicio</p>
+	              <!-- <a href="" disabled="disabled">Inicial</a> -->
+	          </li>
+	          <li onclick="Abrir('configuracoes.html')">
+              <p>Configurações</p>
+              <!-- <a href="#">Configurações</a> -->
+            </li>
+            <li >
+              <p >Testar Serviços</p>
+              <!-- <a href="#">Testar Serviços</a> -->
+	          </li>
+	          <li>
+              <p>Logs</p>
+              <!-- <a href="#">Logs</a> -->
+            </li>
+            <li onclick="Abrir('creditos.html')">
+              <p>Créditos</p>
+              <!-- <a href="#">Creditos</a> -->
+            </li>
+            <li>
+              <p>Rotina de testes</p>
+            </li>
+	        </ul>
 
-                    <div id="opcoes2" class="opcoes">
-                        <div class="titulo" data-toggle="collapse" data-target="#metodoParemtros">
-                            <h3>Metodo e parâmetros opcionais</h3>
-                        </div>
-                        <div id="metodoParemtros" class="collapse conteudo" aria-labelledby="headingOne" data-parent="#definicoes">
-                            <div class="row">
-                                <div class="col-3" >
-                                    <div class="form-group ">
-                                        <label for="metodos">Metodo</label>
-                                        <select id="metodos" class="form-control">
-                                          <option selected>GET</option>
-                                          <option>POST</option>
-                                          <option>PUT</option>
-                                          <option>DELETE</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-9" >
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <label for="param1">Parametro 1</label>
-                                            <input type="text" class="form-control" id="param1" name="param1" placeholder="AgritradeServer/" >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <label for="param2">Parametro 2</label>
-                                            <input type="text" class="form-control" id="param2" name="param2" placeholder="agritrade?tela=" >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-            
-                                        <div class="col-12">
-                                            <label for="param3">Parametro 3</label>
-                                            <input type="text" class="form-control" id="param3" name="param3" placeholder="GetNegociacoesAndamentoConcluidas" >
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
+	        <div class="footer">
+	        	<p></p>
+	        </div>
 
+	      </div>
+    	</nav>
 
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
 
-                
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
 
-                
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item ">
+                  <p>Créditos</p>
+                </li>
+                <li class="nav-item">
+                  <p>GitHub Project</p>
+                </li>
+              </ul>
             </div>
+          </div>
+        </nav>
 
+        <div id="recebeConteudo"></div>
+      </div>
+		</div>
 
-
-
-            <!-- Resposta -->
-            <div class="col-8" style="background-color: green;"><!--resposta vinda do serviço-->
-               
-            </div>
-        </div>
-    </div>
-
-
+    <script src="js/globais.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src="js/md5.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/jquery.dataTables.min.js"></script> -->
+    <script src="http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/tipped/dist/js/tipped.min.js"></script>
+    
     <script src="js/index.js"></script>
-</body>
+
+
+  </body>
 </html>
