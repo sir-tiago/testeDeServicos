@@ -30,11 +30,11 @@
               <!-- <a href="#">Configurações</a> -->
             </li>
             <li >
-              <p >Testar Serviços</p>
+              <p onclick="Abrir('testarServicos.html')">Testar Serviços</p>
               <!-- <a href="#">Testar Serviços</a> -->
 	          </li>
 	          <li>
-              <p>Logs</p>
+              <p onclick="Abrir('log.html')">Logs</p>
               <!-- <a href="#">Logs</a> -->
             </li>
             <li onclick="Abrir('creditos.html')">
@@ -42,7 +42,7 @@
               <!-- <a href="#">Creditos</a> -->
             </li>
             <li>
-              <p>Rotina de testes</p>
+              <p onclick="Abrir('rotinasDeTestes.html')">Rotina de testes</p>
             </li>
 	        </ul>
 
@@ -70,10 +70,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <p>Créditos</p>
+                  <p onclick="Abrir('creditos.html')">Créditos</p>
                 </li>
                 <li class="nav-item">
-                  <p>GitHub Project</p>
+                  <p onclick="abreGitHub()">GitHub Project</p>
                 </li>
               </ul>
             </div>
@@ -95,6 +95,45 @@
     
     <script src="js/index.js"></script>
 
+
+
+
+<div class="modal fade" id="modal_confirmar_remocao" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+        <h4 class="modal-title" id="tituloMsg">Confirmar remoção</h4>
+      </div>
+      <div class="modal-body" id="modal_confirmar_remocao_body">
+        <p>ola</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="fecharModal" >NÃO</button>
+        <button type="button" id="modal_confirmar_remocao_remover" class="btn btn-success">SIM</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+
+    <div class="container">
+      
+      <div class="row">
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+            <!-- <button type="button" id="999" class="btn btn-default">Remover</button> -->
+           
+        </div>
+        
+      </div>
+      
+    </div>
 
   </body>
 </html>
